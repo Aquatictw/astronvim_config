@@ -57,8 +57,8 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        H = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        L = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
@@ -76,14 +76,12 @@ return {
 
         ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
         ["dw"] = { "diw", desc = "Delete Word" },
-
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
-
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
+        -- ["'>"] = {"za", desc = "Toggle fold"},
+        ["s"] = {"<Plug>(leap-anywhere)"},
       },
+      x = {
+        ["s"] = {"<Plug>(leap-anywhere)"},
+      }
     },
   },
 }
