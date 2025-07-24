@@ -7,7 +7,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "sonokai",
+    colorscheme = "moonfly",
     -- highlights = {
     --   init = { -- this table overrides highlights in all themes
     --     -- Normal = { bg = "#000000" },

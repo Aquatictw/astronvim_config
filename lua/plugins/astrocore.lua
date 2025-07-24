@@ -2,6 +2,13 @@
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -44,6 +51,17 @@ return {
         wrap = false, 
       },
       g = { -- vim.g.<key>
+        clipboard = {
+          name = 'OSC 52',
+          copy = {
+            ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+            ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+          },
+          paste = {
+            ['+'] = paste,
+            ['*'] = paste,
+          },
+        }
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
@@ -78,6 +96,10 @@ return {
         ["dw"] = { "diw", desc = "Delete Word" },
         -- ["'>"] = {"za", desc = "Toggle fold"},
         ["s"] = {"<Plug>(leap-anywhere)"},
+
+        ["<Leader>ac"] = { ":CodeCompanionChat<cr>" , desc = "Code Companion Chat"},
+        ["<Leader>ai"] = { ":CodeCompanion<cr>", desc = "Code Companion Inline"},
+        ["<Leader>aa"] = { ":CodeCompanionActions<cr>", desc = "Code Companion Action"},
       },
       x = {
         ["s"] = {"<Plug>(leap-anywhere)"},

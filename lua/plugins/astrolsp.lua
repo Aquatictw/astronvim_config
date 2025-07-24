@@ -26,11 +26,11 @@ return {
         settings = {
           python = {
             analysis = {
-              typeCheckingMode = "basic", 
-              diagnosticSeverityOverrides = {
-                 reportOptionalMemberAccess = "information",
-                 reportArgumentType = "warning",
-                }
+              -- typeCheckingMode = "basic", 
+              -- diagnosticSeverityOverrides = {
+              --    reportOptionalMemberAccess = "information",
+              --    reportArgumentType = "warning",
+                -- }
             }
           }
         }
