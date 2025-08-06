@@ -7,15 +7,21 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "moonfly",
-    -- highlights = {
-    --   init = { -- this table overrides highlights in all themes
-    --     -- Normal = { bg = "#000000" },
-    --   },
-    --   astrodark = { -- a table of overrides/changes when applying the astrotheme theme
-    --     -- Normal = { bg = "#000000" },
-    --   },
-    -- },
+    colorscheme = "default",
+    highlights = {
+      init = { -- this table overrides highlights in all themes
+        Normal  = {bg = "NONE"},
+        NormalNC  = {bg = "NONE"},
+        TabLine = {bg = "NONE"},
+        TabLineFill = {bg = "NONE"},
+
+        CursorLine = {bg = "NONE", blend = 40},
+
+        WinBar = {bg = "NONE"},
+        WinBarNC = {bg = "NONE"},
+
+      },
+    },
     --
     -- Icons can be configured throughout the interface
     icons = {
